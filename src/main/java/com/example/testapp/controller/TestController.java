@@ -1,6 +1,7 @@
 package com.example.testapp.controller;
 
 import com.example.testapp.model.RequestData;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +14,8 @@ public class TestController {
         return ResponseEntity.ok("pong!");
     }
 
-    @PostMapping("/calc")
-    public ResponseEntity<String> calculate(@RequestBody RequestData data){
+    @PostMapping(path = "/calc", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE} )
+    public ResponseEntity<String> calculate(@ModelAttribute RequestData data){
         return ResponseEntity.ok(data.stringify());
     }
 }

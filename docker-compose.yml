@@ -1,0 +1,23 @@
+version: "3"
+
+networks:
+  testApp-net:
+
+#volumes:
+ # testApp-db-data:
+
+services:
+
+  # AccentU backend services ----------------------------------------
+  # AccentU app
+  testApp:
+    build:
+      context: testApp
+      dockerfile: Dockerfile
+    container_name: testApp
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - testApp-net
+    #environment:

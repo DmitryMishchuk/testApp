@@ -4,12 +4,12 @@ ENV SERVER_PORT 8080
 ENV JAVA_OPTS -Xmx512m
 ENV JAVA_TOOL_OPTIONS -Xmx512m
 
-WORKDIR /opt/testApp
+WORKDIR /opt/testapp
 
 USER 1001
 
-COPY ./target/testApp-0.0.1-SNAPSHOT.jar /opt/testApp/testApp-0.0.1-SNAPSHOT.jar
+COPY ./target/test-app-0.0.1-SNAPSHOT.jar /opt/testapp/test-app-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8080
 
-CMD exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/testApp/testApp-0.0.1-SNAPSHOT.jar
+CMD exec $JAVA_HOME/bin/java $JAVA_OPTS -jar /opt/testapp/test-app-0.0.1-SNAPSHOT.jar

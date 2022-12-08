@@ -1,16 +1,20 @@
 package com.example.testapp.controller;
 
+import com.example.testapp.model.RequestData;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/test")
 public class TestController {
 
-    @GetMapping("/")
+    @GetMapping("/ping")
     public ResponseEntity<String> ping(){
         return ResponseEntity.ok("pong!");
+    }
+
+    @PostMapping("/calc")
+    public ResponseEntity<String> calculate(@RequestBody RequestData data){
+        return ResponseEntity.ok(data.stringify());
     }
 }

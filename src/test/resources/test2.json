@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "date": 1671221098,
+    "counter": 1,
+    "name": "Имя любимое мое",
+    "secondName": "Моя фамилия",
+    "sizeOfFamily": "пяць",
+    "allNamesOfFamily": "Ввася Петя Даня",
+    "agesOfFamily": "10 20 30 50",
+    "contactPhone": "+380507776633",
+    "region": "Киев",
+    "adress": "какой то адрес мать его",
+    "status": "чуть не сдох",
+    "adressBefore24": "тот же адрес что и ранее",
+    "partOfRegion": "хрен его знает что это"
+  }
+]

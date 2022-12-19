@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/test")
@@ -31,14 +31,14 @@ public class TestController {
     }
 
     @PostMapping(path = "/exel")
-    public ResponseEntity<FileSystemResource> excelSheet(@RequestBody List<HumanData> dataList) {
+    public ResponseEntity<FileSystemResource> excelSheet(@RequestBody Map<String, HumanData> data) {
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + new Date() + ".xlsx");
         headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
         headers.add("Pragma", "no-cache");
         headers.add("Expires", "0");
 
-        File convert = conversionService.convert(dataList);
+        File convert = conversionService.convert(data.values());
         FileSystemResource resource = new FileSystemResource(convert);
         return ResponseEntity.ok()
                        .headers(headers)

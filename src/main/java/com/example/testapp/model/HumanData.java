@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -28,8 +29,7 @@ public class HumanData {
     private static final SimpleDateFormat DT = new SimpleDateFormat("dd.MM.yyyy");
 
     public List<String> getData() {
-        return List.of(
-                this.id.toString(),
+        String [] newStr = {this.id.toString(),
                 DT.format(new Date(this.date)),
                 this.counter.toString(),
                 this.name,
@@ -42,6 +42,8 @@ public class HumanData {
                 this.adress,
                 this.status,
                 this.adressBefore24,
-                this.partOfRegion);
+                this.partOfRegion};
+
+        return Arrays.asList(newStr);
     }
 }

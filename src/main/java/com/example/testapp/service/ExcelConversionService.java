@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -19,7 +20,7 @@ import static com.example.testapp.config.Constants.TEMP_FILE;
 
 @Service
 public class ExcelConversionService {
-    public File convert(List<HumanData> dataList) {
+    public File convert(Collection<HumanData> dataList) {
         if (!dataList.isEmpty()) {
             try (XSSFWorkbook workbook = new XSSFWorkbook()) {
                 Sheet sheet = createSheet(workbook);
@@ -36,12 +37,13 @@ public class ExcelConversionService {
         return null;
     }
 
-    private void populateSheet(XSSFWorkbook workbook, Sheet sheet, List<HumanData> dataList) {
+    private void populateSheet(XSSFWorkbook workbook, Sheet sheet, Collection<HumanData> dataList) {
         createHeaderRow(sheet, workbook);
         CellStyle style = getMainStyle(workbook);
-        for (int i = 0; i < dataList.size(); i++) {
-            HumanData data = dataList.get(i);
-            convertToRow(sheet, style, data, 1 + i);
+        int pos = 0;
+        for (HumanData d: dataList) {
+            pos+=1;
+            convertToRow(sheet, style, d, pos);
         }
     }
 

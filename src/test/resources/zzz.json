@@ -1,0 +1,50 @@
+{
+  "0": {
+    "date": "0",
+    "id": "4100",
+    "counter": "0",
+    "name": "TEST",
+    "secondName": "TEST",
+    "sizeOfFamily": "TEST",
+    "TEST": "TEST",
+    "agesOfFamily": "TEST",
+    "contactPhone": "TEST",
+    "region": "TEST",
+    "adress": "TEST",
+    "status": "TEST",
+    "adressBefore24": "TEST",
+    "partOfRegion": "TEST"
+  },
+  "1": {
+    "date": "0",
+    "id": "4100",
+    "counter": "0",
+    "name": "TEST",
+    "secondName": "TEST",
+    "sizeOfFamily": "TEST",
+    "TEST": "TEST",
+    "agesOfFamily": "TEST",
+    "contactPhone": "TEST",
+    "region": "TEST",
+    "adress": "TEST",
+    "status": "TEST",
+    "adressBefore24": "TEST",
+    "partOfRegion": "TEST"
+  },
+  "2": {
+    "date": "0",
+    "id": "4100",
+    "counter": "0",
+    "name": "TEST",
+    "secondName": "TEST",
+    "sizeOfFamily": "TEST",
+    "TEST": "TEST",
+    "agesOfFamily": "TEST",
+    "contactPhone": "TEST",
+    "region": "TEST",
+    "adress": "TEST",
+    "status": "TEST",
+    "adressBefore24": "TEST",
+    "partOfRegion": "TEST"
+  }
+}

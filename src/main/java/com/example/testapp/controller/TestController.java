@@ -37,6 +37,7 @@ public class TestController {
         headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
         headers.add("Pragma", "no-cache");
         headers.add("Expires", "0");
+        headers.add("Access-Control-Allow-Origin", "*");
 
         File convert = conversionService.convert(data.values());
         FileSystemResource resource = new FileSystemResource(convert);
